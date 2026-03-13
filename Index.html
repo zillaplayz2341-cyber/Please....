@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'm Sorry Sana</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        
+        body {
+            background: #0f0c29;
+            background: linear-gradient(to bottom, #24243e, #302b63, #0f0c29);
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .phone-frame {
+            width: 350px;
+            height: 650px;
+            background: #fff;
+            border-radius: 40px;
+            border: 8px solid #333;
+            position: relative;
+            color: #333;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        .page {
+            display: none;
+            padding: 30px;
+            height: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            animation: slideIn 0.5s ease;
+        }
+
+        .active { display: flex; }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        h1 { color: #ff4b2b; margin-bottom: 15px; font-size: 24px; }
+        p { font-size: 15px; line-height: 1.6; color: #555; }
+        .urdu { direction: rtl; font-size: 18px; color: #222; margin-top: 10px; font-weight: 500; }
+
+        .btn-next {
+            margin-top: 30px;
+            background: #ff4b2b;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .heart-bg { font-size: 50px; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+    <div class="phone-frame">
+        <div id="page1" class="page active">
+            <div class="heart-bg">👋</div>
+            <h1>Hey Bestie...</h1>
+            <p>I know things have been a bit quiet lately. I made this just for you because I have something to say.</p>
+            <p class="urdu">.....Mujhe pata hai ap naraz ho</p>
+            <button class="btn-next" onclick="showPage(2)">Click to Continue</button>
+        </div>
+
+        <div id="page2" class="page">
+            <div class="heart-bg">📸</div>
+            <h1>Our Memories</h1>
+            <p>From all the late-night chats to the inside jokes, every moment of our friendship is special to me.</p>
+            <p class="urdu"></p>
+            <button class="btn-next" onclick="showPage(3)">Go Ahead</button>
+        </div>
+
+        <div id="page3" class="page">
+            <div class="heart-bg">😔</div>
+            <h1>I Am Sorry</h1>
+            <p>I am really sorry for my mistake. I never wanted to hurt you. You are my best friend, Factory, crime partner, Lady Boss, Zilla Ki Zoii and Sana Gull</p>
+            <p class="urdu">Main bohot sharminda hoon. Maaf karde yaar.</p>
+            <button class="btn-next" onclick="showPage(4)">Last Thing...</button>
+        </div>
+
+        <div id="page4" class="page">
+            <div class="heart-bg">❤️</div>
+            <h1>Friends Forever?</h1>
+            <p>I’m really, really sorry for everything. Tum sirf ek dost nahi ho, balkay mere wo bestie ho jis se main sab share karta hoon. Tere bina mera chat box aur mera mood dono khali rehte hain.</p>
+            <p class="urdu">Chal ab Sorry accept kar ly...... please please</p>
+            <button class="btn-next" onclick="reset()">Start Over</button>
+            <p style="margin-top:20px; font-size: 12px; color: #999;">Made with ❤️ for You</p>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageNumber) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            // Show the selected page
+            document.getElementById('page' + pageNumber).classList.add('active');
+        }
+
+        function reset() {
+            showPage(1);
+        }
+    </script>
+</body>
+</html>
